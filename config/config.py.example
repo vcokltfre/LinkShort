@@ -1,0 +1,22 @@
+from os import environ as env
+
+if "docker" in env:
+    creds = {
+        "host":"db",
+        "port":3306,
+        "user":"root",
+        "password":"password",
+        "db":"linkshort"
+    }
+else:
+    creds = {
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"password",
+        "db":"linkshort"
+    }
+
+master_token = "abcd"
+fallback = "https://example.com"
+host_url = "http://example.com/lshort"

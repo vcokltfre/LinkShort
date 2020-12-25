@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS Urls (
+    link_name VARCHAR(32) NOT NULL,
+    link VARCHAR(1024) NOT NULL,
+    clicks BIGINT NOT NULL DEFAULT 0,
+    PRIMARY KEY (link_name)
+);

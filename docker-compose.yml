@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      docker: "yes"
+    links:
+      - db
+    ports:
+      - 5001:8191
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: linkshort
+    ports:
+      - 1919:3306
