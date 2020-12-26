@@ -23,6 +23,8 @@ async def index():
 
 @app.get("/{urlid}")
 async def getlink(urlid: str):
+    if urlid == "teapot":
+        return RedirectResponse(url="https://google.com/teapot", status_code=301)
     await db.ensure_init()
     link = await db.get_link(urlid)
 
